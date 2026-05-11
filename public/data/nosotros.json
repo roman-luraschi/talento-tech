@@ -1,0 +1,30 @@
+[
+  {
+    "id": 1,
+    "nombre": "Ana Martínez",
+    "email": "ana.martinez@talentotech.store",
+    "puesto": "CEO",
+    "foto": "/images/avatar1.svg"
+  },
+  {
+    "id": 2,
+    "nombre": "Lucas Fernández",
+    "email": "lucas.fernandez@talentotech.store",
+    "puesto": "CTO",
+    "foto": "/images/avatar2.svg"
+  },
+  {
+    "id": 3,
+    "nombre": "Valentina Sosa",
+    "email": "valentina.sosa@talentotech.store",
+    "puesto": "Directora de Producto",
+    "foto": "/images/avatar3.svg"
+  },
+  {
+    "id": 4,
+    "nombre": "Diego Peralta",
+    "email": "diego.peralta@talentotech.store",
+    "puesto": "Líder de Soporte",
+    "foto": "/images/avatar4.svg"
+  }
+]

@@ -1,0 +1,134 @@
+.footer {
+  position: relative;
+  margin-top: auto;
+  scroll-margin-top: 5rem;
+  background: linear-gradient(165deg, #6e8085 0%, #5a696d 55%, #4e5c60 100%);
+  color: #fafcfc;
+}
+
+.footer__accent {
+  height: 4px;
+  background: linear-gradient(90deg, #a9bec2 0%, #128cb8 45%, #cbd4d6 100%);
+}
+
+.footer__inner {
+  max-width: 72rem;
+  margin: 0 auto;
+  padding: 2rem 1.25rem 1.5rem;
+}
+
+.footer__directorio-avatar {
+  object-fit: cover;
+  aspect-ratio: 1 / 1;
+}
+
+.footer__directorio .card {
+  border-radius: 0.5rem;
+}
+
+.footer__directorio .card-title {
+  color: #2d3436;
+}
+
+.footer__main {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1.75rem 2rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid rgba(203, 212, 214, 0.35);
+}
+
+.footer__brand-block {
+  max-width: 22rem;
+}
+
+.footer__brand {
+  margin: 0 0 0.5rem;
+  font-size: 1.125rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: #fafcfc;
+}
+
+.footer__tagline {
+  margin: 0;
+  font-size: 0.9375rem;
+  line-height: 1.55;
+  color: #cbd4d6;
+}
+
+.footer__nav {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+  min-width: min(100%, 14rem);
+}
+
+.footer__links {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem 1.5rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.footer__links a {
+  font-size: 0.9375rem;
+  font-weight: 600;
+  color: #a9bec2;
+  text-decoration: none;
+  transition: color 0.18s ease;
+}
+
+.footer__links a:hover {
+  color: #fafcfc;
+}
+
+.footer__links a:focus-visible {
+  outline: 2px solid #128cb8;
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+.footer__legal {
+  display: grid;
+  gap: 1.25rem;
+  padding: 1.5rem 0 0;
+  margin-bottom: 1rem;
+  border-top: 1px solid rgba(203, 212, 214, 0.35);
+  scroll-margin-top: 5rem;
+}
+
+.footer__legal-block {
+  margin: 0;
+  scroll-margin-top: 5rem;
+}
+
+.footer__legal-title {
+  margin: 0 0 0.45rem;
+  font-size: 0.9375rem;
+  font-weight: 700;
+  color: #fafcfc;
+  letter-spacing: -0.01em;
+}
+
+.footer__legal-text {
+  margin: 0;
+  font-size: 0.8125rem;
+  line-height: 1.55;
+  color: rgba(250, 252, 252, 0.85);
+}
+
+.footer__bottom {
+  padding-top: 1.25rem;
+}
+
+.footer__copy {
+  margin: 0;
+  font-size: 0.8125rem;
+  color: rgba(250, 252, 252, 0.72);
+}

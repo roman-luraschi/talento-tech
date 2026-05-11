@@ -1,0 +1,63 @@
+.promo-banner {
+  margin: 0;
+  padding: 2rem 0;
+  background: linear-gradient(90deg, #111827 0%, #1e3a5f 100%);
+  color: #f9fafb;
+}
+
+.promo-banner__inner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.25rem;
+  max-width: 72rem;
+  margin: 0 auto;
+  padding: 0 1.25rem;
+}
+
+.promo-banner__content {
+  flex: 1;
+  min-width: min(100%, 280px);
+}
+
+.promo-banner__title {
+  margin: 0 0 0.5rem;
+  font-size: 1.25rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.promo-banner__text {
+  margin: 0;
+  font-size: 0.9375rem;
+  line-height: 1.55;
+  color: #e5e7eb;
+  max-width: 36rem;
+}
+
+.promo-banner__cta {
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.75rem 1.25rem;
+  font-size: 0.9375rem;
+  font-weight: 600;
+  color: #111827;
+  text-decoration: none;
+  background: #fff;
+  border-radius: 0.5rem;
+  transition:
+    background 0.15s ease,
+    transform 0.15s ease;
+}
+
+.promo-banner__cta:hover {
+  background: #f3f4f6;
+}
+
+.promo-banner__cta:focus-visible {
+  outline: 2px solid #fff;
+  outline-offset: 3px;
+}

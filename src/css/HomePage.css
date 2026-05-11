@@ -1,0 +1,59 @@
+.home-page {
+  flex: 1;
+  width: 100%;
+}
+
+.home-page__section {
+  padding: 2.5rem 0;
+}
+
+.home-page__section--preview {
+  background: linear-gradient(180deg, rgba(203, 212, 214, 0.35) 0%, #fafcfc 100%);
+  border-bottom: 1px solid #cbd4d6;
+}
+
+.home-page__preview-head {
+  margin-bottom: 1.75rem;
+  max-width: 40rem;
+}
+
+.home-page__preview-title {
+  margin: 0 0 0.5rem;
+  font-size: 1.5rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: #6e8085;
+}
+
+.home-page__preview-lead {
+  margin: 0;
+  font-size: 1rem;
+  line-height: 1.55;
+  color: #6e8085;
+}
+
+.home-page__mono {
+  font-family: ui-monospace, monospace;
+  font-size: 0.9em;
+  font-weight: 600;
+  color: #128cb8;
+}
+
+.home-page__catalog-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 240px), 1fr));
+  gap: 1.35rem;
+  align-items: stretch;
+}
+
+.home-page__section--catalog {
+  background: #fff;
+  border-top: 1px solid #cbd4d6;
+  border-bottom: 1px solid #cbd4d6;
+}
+
+.home-page__container {
+  max-width: 72rem;
+  margin: 0 auto;
+  padding: 0 1.25rem;
+}
