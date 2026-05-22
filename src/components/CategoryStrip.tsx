@@ -18,7 +18,7 @@ function CategoryStrip({ categories }: CategoryStripProps) {
         <ul className="category-strip__list" role="list">
           {categories.map((cat) => (
             <li key={cat.id}>
-              <a href={`#catalogo`} className="category-strip__chip">
+              <a href="#destacados" className="category-strip__chip">
                 {cat.label}
               </a>
             </li>

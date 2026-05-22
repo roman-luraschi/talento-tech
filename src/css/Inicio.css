@@ -1,0 +1,31 @@
+.inicio {
+  flex: 1;
+  width: 100%;
+}
+
+.inicio__section {
+  padding: 2.5rem 0;
+}
+
+.inicio__section--destacados {
+  background: linear-gradient(180deg, rgba(203, 212, 214, 0.35) 0%, #fafcfc 100%);
+  border-top: 1px solid #cbd4d6;
+  border-bottom: 1px solid #cbd4d6;
+}
+
+.inicio__container {
+  max-width: 72rem;
+  margin: 0 auto;
+  padding: 0 1.25rem;
+}
+
+.inicio__empty {
+  margin: 0;
+  padding: 2rem;
+  text-align: center;
+  font-size: 1rem;
+  color: #6e8085;
+  background: rgba(255, 255, 255, 0.6);
+  border: 1px dashed #cbd4d6;
+  border-radius: 0.75rem;
+}

@@ -11,6 +11,7 @@ export interface Product {
   categoryId: string
   imageUrl: string
   badge?: string
+  description?: string
 }
 
 export interface CartLine {

@@ -13,7 +13,7 @@ function PromoBanner() {
             dentro de los primeros 30 días.
           </p>
         </div>
-        <a href="#catalogo" className="promo-banner__cta">
+        <a href="#destacados" className="promo-banner__cta">
           Ver ofertas
         </a>
       </div>

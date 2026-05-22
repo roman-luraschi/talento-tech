@@ -13,8 +13,8 @@ function Hero() {
             Descubrí productos seleccionados y ofertas especiales. Envíos a todo
             el país y compra segura.
           </p>
-          <a href="#catalogo" className="hero__cta">
-            Ver catálogo
+          <a href="#destacados" className="hero__cta">
+            Ver destacados
           </a>
         </div>
         <div className="hero__visual" aria-hidden />

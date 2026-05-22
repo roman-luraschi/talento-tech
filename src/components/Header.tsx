@@ -19,7 +19,7 @@ function Header() {
               </NavLink>
             </li>
             <li>
-              <Link to="/#catalogo">Productos</Link>
+              <Link to="/#destacados">Productos</Link>
             </li>
             <li>
               <NavLink to="/favoritos">Favoritos</NavLink>

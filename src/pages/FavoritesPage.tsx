@@ -20,8 +20,8 @@ function FavoritesPage() {
       <div className="favorites-page__container">
         <header className="favorites-page__head">
           <h1 className="favorites-page__title">Favoritos</h1>
-          <Link to="/#catalogo" className="favorites-page__back">
-            Ver catálogo
+          <Link to="/#destacados" className="favorites-page__back">
+            Ver destacados
           </Link>
         </header>
 
