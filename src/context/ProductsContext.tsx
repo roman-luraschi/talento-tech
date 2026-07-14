@@ -6,6 +6,7 @@ import {
   type ReactNode,
 } from 'react'
 import { getProducts } from '../firestore/products/productService'
+import { mapErrorMessage } from '../lib/errors/mapErrorMessage'
 import type { Product } from '../types/store'
 
 interface ProductsContextValue {
@@ -31,9 +32,7 @@ export function ProductsProvider({ children }: { children: ReactNode }) {
       const data = await getProducts()
       setProducts(data)
     } catch (err: unknown) {
-      const message =
-        err instanceof Error ? err.message : 'No se pudieron cargar los productos'
-      setError(message)
+      setError(mapErrorMessage(err, 'products'))
       setProducts([])
     }
     setLoading(false)
@@ -50,11 +49,7 @@ export function ProductsProvider({ children }: { children: ReactNode }) {
         setError(null)
       } catch (err: unknown) {
         if (cancelled) return
-        const message =
-          err instanceof Error
-            ? err.message
-            : 'No se pudieron cargar los productos'
-        setError(message)
+        setError(mapErrorMessage(err, 'products'))
         setProducts([])
       }
       if (!cancelled) {

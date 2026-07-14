@@ -4,6 +4,7 @@ import { Form, Button } from 'react-bootstrap'
 import { FaSignInAlt, FaUserPlus } from 'react-icons/fa'
 import { toast } from 'react-toastify'
 import { useAuth } from '../context/AuthContext'
+import { mapErrorMessage } from '../lib/errors/mapErrorMessage'
 import '../css/Login.css'
 
 type AuthMode = 'login' | 'register'
@@ -69,8 +70,7 @@ function LoginForm() {
         )
       }
     } catch (err: unknown) {
-      const message =
-        err instanceof Error ? err.message : 'No se pudo completar la operación.'
+      const message = mapErrorMessage(err, 'auth')
       setError(message)
       toast.error(message)
     }

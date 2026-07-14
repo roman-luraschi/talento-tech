@@ -36,7 +36,7 @@ function ProductDetailPage() {
       <div className="product-detail">
         <div className="product-detail__container">
           <header className="product-detail__head">
-            <h1 className="product-detail__title">Error al cargar</h1>
+            <h1 className="product-detail__title">No pudimos cargar el producto</h1>
             <Link to="/" className="product-detail__back">
               Volver al inicio
             </Link>

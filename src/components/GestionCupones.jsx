@@ -7,6 +7,7 @@ import {
   getDocs,
 } from 'firebase/firestore'
 import { getDb } from '../firestore/config'
+import { mapErrorMessage } from '../lib/errors/mapErrorMessage'
 import '../css/Cupones.css'
 
 const CUPONES_COLLECTION = 'cupones'
@@ -36,11 +37,7 @@ function GestionCupones() {
       }))
       setCupones(data)
     } catch (err) {
-      const message =
-        err instanceof Error
-          ? err.message
-          : 'No se pudieron cargar los cupones.'
-      setListError(message)
+      setListError(mapErrorMessage(err, 'coupon'))
     }
     setLoading(false)
   }
@@ -61,11 +58,7 @@ function GestionCupones() {
         setListError(null)
       } catch (err) {
         if (cancelled) return
-        const message =
-          err instanceof Error
-            ? err.message
-            : 'No se pudieron cargar los cupones.'
-        setListError(message)
+        setListError(mapErrorMessage(err, 'coupon'))
       }
       if (!cancelled) {
         setLoading(false)
@@ -109,9 +102,13 @@ function GestionCupones() {
       setDescuento('')
       await cargarCupones()
     } catch (err) {
-      const message =
-        err instanceof Error ? err.message : 'No se pudo crear el cupón.'
-      setFormError(message)
+      setFormError(
+        mapErrorMessage(
+          err,
+          'coupon',
+          'No se pudo crear el cupón. Revisá los datos e intentá de nuevo.',
+        ),
+      )
     }
     setIsSubmitting(false)
   }
@@ -124,11 +121,13 @@ function GestionCupones() {
       await deleteDoc(doc(getDb(), CUPONES_COLLECTION, idToDelete))
       await cargarCupones()
     } catch (err) {
-      const message =
-        err instanceof Error
-          ? err.message
-          : `No se pudo eliminar el cupón ${codigoCupon}.`
-      setDeleteError(message)
+      setDeleteError(
+        mapErrorMessage(
+          err,
+          'coupon',
+          `No se pudo eliminar el cupón ${codigoCupon}. Intentá de nuevo.`,
+        ),
+      )
     }
     setDeletingId(null)
   }

@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import '../css/Footer.css'
 import Directorio from './Directorio'
 import { getEquipo } from '../firestore/equipo/equipoService'
+import { mapErrorMessage } from '../lib/errors/mapErrorMessage'
 import type { Integrante } from '../types/equipo'
 
 function Footer() {
@@ -24,12 +25,8 @@ function Footer() {
           setEquipo(data)
         }
       } catch (err: unknown) {
-        const message =
-          err instanceof Error
-            ? err.message
-            : 'No se pudo cargar el equipo desde Firestore.'
         if (!cancelled) {
-          setError(message)
+          setError(mapErrorMessage(err, 'equipo'))
           setEquipo([])
         }
       }

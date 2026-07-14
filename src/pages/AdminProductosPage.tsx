@@ -21,6 +21,7 @@ import {
   PRODUCTS_COLLECTION,
 } from '../firestore/products/productService'
 import { useProducts } from '../context/ProductsContext'
+import { mapErrorMessage } from '../lib/errors/mapErrorMessage'
 import type { Product } from '../types/store'
 import '../css/AdminProductos.css'
 
@@ -105,13 +106,15 @@ function AdminProductosPage() {
 
       await refetch()
     } catch (err: unknown) {
-      const message =
-        err instanceof Error
-          ? err.message
-          : productoAEditar === null
-            ? 'No se pudo crear el producto.'
-            : 'No se pudo actualizar el producto.'
-      toast.error(message)
+      toast.error(
+        mapErrorMessage(
+          err,
+          'product-write',
+          productoAEditar === null
+            ? 'No se pudo crear el producto. Revisá los datos e intentá de nuevo.'
+            : 'No se pudo actualizar el producto. Revisá los datos e intentá de nuevo.',
+        ),
+      )
     }
     setIsSubmitting(false)
   }
@@ -131,9 +134,13 @@ function AdminProductosPage() {
       toast.success(`"${productToDelete.name}" eliminado`)
       setProductoAEliminar(null)
     } catch (err: unknown) {
-      const message =
-        err instanceof Error ? err.message : 'No se pudo eliminar el producto.'
-      toast.error(message)
+      toast.error(
+        mapErrorMessage(
+          err,
+          'product-write',
+          'No se pudo eliminar el producto. Intentá de nuevo.',
+        ),
+      )
     }
     setDeletingId(null)
   }

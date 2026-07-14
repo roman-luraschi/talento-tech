@@ -3,6 +3,7 @@ import { Link, useLocation, useNavigate } from 'react-router-dom'
 import { toast } from 'react-toastify'
 import Seo from '../components/Seo'
 import { useStore } from '../context/StoreContext'
+import { mapErrorMessage } from '../lib/errors/mapErrorMessage'
 import '../css/CartPage.css'
 
 const priceFormatter = new Intl.NumberFormat('es-AR', {
@@ -49,8 +50,7 @@ function CartPage() {
       setCouponInput('')
       toast.success('Cupón aplicado correctamente')
     } catch (error: unknown) {
-      const message =
-        error instanceof Error ? error.message : 'No se pudo aplicar el cupón.'
+      const message = mapErrorMessage(error, 'coupon-apply')
       setCouponError(message)
       toast.error(message)
     }
