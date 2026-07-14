@@ -1,0 +1,23 @@
+[
+  {
+    "id": "eq1",
+    "nombre": "Ana Martínez",
+    "rol": "Desarrolladora Frontend",
+    "linkedinURL": "https://www.linkedin.com/in/ana-martinez-tt",
+    "fotoURL": "https://i.pravatar.cc/200?img=5"
+  },
+  {
+    "id": "eq2",
+    "nombre": "Lucas Fernández",
+    "rol": "Diseñador UX/UI",
+    "linkedinURL": "https://www.linkedin.com/in/lucas-fernandez-tt",
+    "fotoURL": "https://i.pravatar.cc/200?img=12"
+  },
+  {
+    "id": "eq3",
+    "nombre": "Valentina Sosa",
+    "rol": "Desarrolladora Backend",
+    "linkedinURL": "https://www.linkedin.com/in/valentina-sosa-tt",
+    "fotoURL": "https://i.pravatar.cc/200?img=9"
+  }
+]
