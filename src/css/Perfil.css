@@ -1,0 +1,85 @@
+.perfil-page {
+  flex: 1;
+  width: 100%;
+  padding: 2.5rem 0 3rem;
+}
+
+.perfil-page__container {
+  max-width: 28rem;
+  margin: 0 auto;
+  padding: 0 1.25rem;
+}
+
+.perfil-card {
+  padding: 1.5rem;
+  background: #fafcfc;
+  border: 1px solid #cbd4d6;
+  border-radius: 0.75rem;
+  box-shadow: 0 2px 8px rgba(18, 140, 184, 0.06);
+}
+
+.perfil-card__title {
+  margin: 0 0 0.75rem;
+  font-size: 1.5rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: #6e8085;
+}
+
+.perfil-card__welcome {
+  margin: 0 0 0.5rem;
+  font-size: 1.05rem;
+  font-weight: 600;
+  line-height: 1.45;
+  color: #128cb8;
+  word-break: break-word;
+}
+
+.perfil-card__hint {
+  margin: 0 0 1rem;
+  font-size: 0.9rem;
+  line-height: 1.45;
+  color: #8a9a9e;
+}
+
+.perfil-card__stats {
+  margin: 0 0 1rem;
+  padding-left: 1.1rem;
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: #6e8085;
+}
+
+.perfil-card__links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem 1rem;
+  margin-bottom: 1.25rem;
+}
+
+.perfil-card__links a {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #128cb8;
+  text-decoration: none;
+}
+
+.perfil-card__links a:hover {
+  text-decoration: underline;
+}
+
+.perfil-card__logout {
+  width: 100%;
+  padding: 0.7rem 1rem;
+  font: inherit;
+  font-weight: 700;
+  color: #fff;
+  background: #c0392b;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+}
+
+.perfil-card__logout:hover {
+  background: #a93226;
+}

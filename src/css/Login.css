@@ -1,0 +1,134 @@
+.login-page {
+  flex: 1;
+  width: 100%;
+  padding: 2.5rem 0 3rem;
+}
+
+.login-page__container {
+  max-width: 24rem;
+  margin: 0 auto;
+  padding: 0 1.25rem;
+}
+
+.login-page__status {
+  margin: 2rem auto;
+  text-align: center;
+  color: #8a9a9e;
+}
+
+.login-form {
+  padding: 1.5rem;
+  background: #fafcfc;
+  border: 1px solid #cbd4d6;
+  border-radius: 0.75rem;
+  box-shadow: 0 2px 8px rgba(18, 140, 184, 0.06);
+}
+
+.login-form__title {
+  margin: 0 0 0.35rem;
+  font-size: 1.5rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: #6e8085;
+}
+
+.login-form__subtitle {
+  margin: 0 0 1.25rem;
+  font-size: 0.9rem;
+  line-height: 1.45;
+  color: #8a9a9e;
+}
+
+.login-form__field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  margin-bottom: 1rem;
+}
+
+.login-form__label {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #6e8085;
+}
+
+.login-form__input {
+  width: 100%;
+  padding: 0.65rem 0.85rem;
+  font: inherit;
+  font-size: 0.95rem;
+  color: #6e8085;
+  background: #fff;
+  border: 1px solid #cbd4d6;
+  border-radius: 0.5rem;
+}
+
+.login-form__input:focus {
+  outline: none;
+  border-color: #128cb8;
+  box-shadow: 0 0 0 3px rgba(18, 140, 184, 0.15);
+}
+
+.login-form__input:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+}
+
+.login-form__error {
+  margin: 0 0 0.85rem;
+  font-size: 0.875rem;
+  color: #b42318;
+}
+
+.login-form__submit {
+  width: 100%;
+  padding: 0.7rem 1rem;
+  font: inherit;
+  font-weight: 700;
+  color: #fff;
+  background: #128cb8;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+}
+
+.login-form__submit:hover:not(:disabled) {
+  background: #0f7aa0;
+}
+
+.login-form__submit:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.login-form__switch {
+  font-size: 0.875rem;
+  color: #8a9a9e;
+}
+
+.login-form__link {
+  padding: 0;
+  font: inherit;
+  font-weight: 700;
+  color: #128cb8;
+  background: none;
+  border: none;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.login-form__switch a {
+  font-weight: 700;
+  color: #128cb8;
+  text-decoration: none;
+}
+
+.login-form__switch a:hover {
+  text-decoration: underline;
+}
+
+.protected-route__loading {
+  margin: 2rem auto;
+  text-align: center;
+  color: #8a9a9e;
+}
