@@ -3,9 +3,20 @@ import '../css/CategoryStrip.css'
 
 interface CategoryStripProps {
   categories: Category[]
+  selectedCategoryId?: string | null
+  onSelectCategory?: (categoryId: string | null) => void
 }
 
-function CategoryStrip({ categories }: CategoryStripProps) {
+function CategoryStrip({
+  categories,
+  selectedCategoryId = null,
+  onSelectCategory,
+}: CategoryStripProps) {
+  const handleSelect = (categoryId: string) => {
+    if (!onSelectCategory) return
+    onSelectCategory(selectedCategoryId === categoryId ? null : categoryId)
+  }
+
   return (
     <section
       className="category-strip"
@@ -16,13 +27,25 @@ function CategoryStrip({ categories }: CategoryStripProps) {
           Categorías
         </h2>
         <ul className="category-strip__list" role="list">
-          {categories.map((cat) => (
-            <li key={cat.id}>
-              <a href="#destacados" className="category-strip__chip">
-                {cat.label}
-              </a>
-            </li>
-          ))}
+          {categories.map((cat) => {
+            const isSelected = selectedCategoryId === cat.id
+            return (
+              <li key={cat.id}>
+                <button
+                  type="button"
+                  className={
+                    isSelected
+                      ? 'category-strip__chip category-strip__chip--active'
+                      : 'category-strip__chip'
+                  }
+                  aria-pressed={isSelected}
+                  onClick={() => handleSelect(cat.id)}
+                >
+                  {cat.label}
+                </button>
+              </li>
+            )
+          })}
         </ul>
       </div>
     </section>

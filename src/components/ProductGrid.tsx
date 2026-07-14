@@ -1,20 +1,30 @@
+import { Container, Row, Col } from 'react-bootstrap'
 import type { Product } from '../types/store'
 import TarjetaProducto from './TarjetaProducto'
-import '../css/ProductGrid.css'
 
 interface ProductGridProps {
   products: Product[]
+  fluid?: boolean
 }
 
-function ProductGrid({ products }: ProductGridProps) {
+function ProductGrid({ products, fluid = true }: ProductGridProps) {
   return (
-    <div className="product-grid" role="list">
-      {products.map((product) => (
-        <div key={product.id} className="product-grid__cell" role="listitem">
-          <TarjetaProducto product={product} />
-        </div>
-      ))}
-    </div>
+    <Container fluid={fluid} className="px-0">
+      <Row className="g-4" role="list">
+        {products.map((product) => (
+          <Col
+            key={product.id}
+            xs={12}
+            md={6}
+            lg={4}
+            className="mb-1"
+            role="listitem"
+          >
+            <TarjetaProducto product={product} />
+          </Col>
+        ))}
+      </Row>
+    </Container>
   )
 }
 

@@ -1,7 +1,10 @@
 import { useId, type MouseEvent } from 'react'
 import { Link } from 'react-router-dom'
+import { toast } from 'react-toastify'
+import { FaShoppingCart, FaStar } from 'react-icons/fa'
 import { useStore } from '../context/StoreContext'
 import type { Product } from '../types/store'
+import { BotonCompra, BotonFavorito } from '../styles/buttons'
 import '../css/TarjetaProducto.css'
 
 export interface TarjetaProductoProps {
@@ -14,9 +17,6 @@ const priceFormatter = new Intl.NumberFormat('es-AR', {
   currency: 'ARS',
   minimumFractionDigits: 2,
 })
-
-const starPath =
-  'M12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z'
 
 function TarjetaProducto({ product, imagenAlt }: TarjetaProductoProps) {
   const { addToCart, toggleFavorite, isFavorite } = useStore()
@@ -32,12 +32,19 @@ function TarjetaProducto({ product, imagenAlt }: TarjetaProductoProps) {
     event.preventDefault()
     event.stopPropagation()
     addToCart(product)
+    toast.success(`${product.name} agregado al carrito`)
   }
 
   function marcarComoFavorito(event: MouseEvent<HTMLButtonElement>) {
     event.preventDefault()
     event.stopPropagation()
+    const estabaEnFavoritos = esFavorito
     toggleFavorite(product.id)
+    if (estabaEnFavoritos) {
+      toast.info(`${product.name} quitado de favoritos`)
+    } else {
+      toast.success(`${product.name} agregado a favoritos`)
+    }
   }
 
   const favoritoLabel = esFavorito
@@ -45,8 +52,12 @@ function TarjetaProducto({ product, imagenAlt }: TarjetaProductoProps) {
     : `Marcar como favorito: ${product.name}`
 
   return (
-    <article className="tarjeta-producto" aria-labelledby={tituloId}>
-      <Link to={productUrl} className="tarjeta-producto__link" aria-labelledby={tituloId}>
+    <article className="tarjeta-producto h-100" aria-labelledby={tituloId}>
+      <Link
+        to={productUrl}
+        className="tarjeta-producto__link"
+        aria-labelledby={tituloId}
+      >
         <div className="tarjeta-producto__media">
           {product.badge ? (
             <span className="tarjeta-producto__badge">{product.badge}</span>
@@ -57,7 +68,7 @@ function TarjetaProducto({ product, imagenAlt }: TarjetaProductoProps) {
           <img
             src={product.imageUrl}
             alt={altText}
-            className="tarjeta-producto__img"
+            className="tarjeta-producto__img img-fluid"
             width={400}
             height={400}
             loading="lazy"
@@ -67,41 +78,25 @@ function TarjetaProducto({ product, imagenAlt }: TarjetaProductoProps) {
           <h3 id={tituloId} className="tarjeta-producto__titulo">
             {product.name}
           </h3>
-          <p className="tarjeta-producto__precio">{priceFormatter.format(product.price)}</p>
+          <p className="tarjeta-producto__precio">
+            {priceFormatter.format(product.price)}
+          </p>
         </div>
       </Link>
       <div className="tarjeta-producto__acciones">
-        <button type="button" className="tarjeta-producto__anadir" onClick={anadirAlCarrito}>
-          Añadir producto
-        </button>
-        <button
+        <BotonCompra type="button" onClick={anadirAlCarrito}>
+          <FaShoppingCart aria-hidden />
+          Añadir
+        </BotonCompra>
+        <BotonFavorito
           type="button"
-          className={
-            esFavorito
-              ? 'tarjeta-producto__favorito tarjeta-producto__favorito--activo'
-              : 'tarjeta-producto__favorito'
-          }
+          $activo={esFavorito}
           aria-label={favoritoLabel}
           aria-pressed={esFavorito}
           onClick={marcarComoFavorito}
         >
-          <svg
-            className="tarjeta-producto__estrella"
-            width="22"
-            height="22"
-            viewBox="0 0 24 24"
-            aria-hidden
-            focusable="false"
-          >
-            <path
-              d={starPath}
-              fill={esFavorito ? 'currentColor' : 'none'}
-              stroke="currentColor"
-              strokeWidth="1.5"
-              strokeLinejoin="round"
-            />
-          </svg>
-        </button>
+          <FaStar aria-hidden />
+        </BotonFavorito>
       </div>
     </article>
   )

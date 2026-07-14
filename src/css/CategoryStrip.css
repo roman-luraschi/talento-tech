@@ -33,11 +33,13 @@
   padding: 0.5rem 1rem;
   font-size: 0.875rem;
   font-weight: 500;
+  font-family: inherit;
   color: #374151;
   text-decoration: none;
   background: #f3f4f6;
   border: 1px solid #e5e7eb;
   border-radius: 999px;
+  cursor: pointer;
   transition:
     background 0.15s ease,
     border-color 0.15s ease,
@@ -48,6 +50,18 @@
   background: #eff6ff;
   border-color: #bfdbfe;
   color: #1d4ed8;
+}
+
+.category-strip__chip--active {
+  background: #2563eb;
+  border-color: #2563eb;
+  color: #fff;
+}
+
+.category-strip__chip--active:hover {
+  background: #1d4ed8;
+  border-color: #1d4ed8;
+  color: #fff;
 }
 
 .category-strip__chip:focus-visible {
