@@ -1,0 +1,228 @@
+.cupones-page {
+  flex: 1;
+  width: 100%;
+  padding: 2rem 0 3rem;
+}
+
+.cupones-page__container {
+  max-width: 42rem;
+  margin: 0 auto;
+  padding: 0 1.25rem;
+}
+
+.cupones-page__head {
+  margin-bottom: 1.75rem;
+}
+
+.cupones-page__title {
+  margin: 0 0 0.35rem;
+  font-size: 1.75rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: #6e8085;
+}
+
+.cupones-page__subtitle {
+  margin: 0;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: #8a9a9e;
+}
+
+.cupones-page__stack {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.cupon-form {
+  padding: 1.25rem;
+  background: #fafcfc;
+  border: 1px solid #cbd4d6;
+  border-radius: 0.75rem;
+  box-shadow: 0 2px 8px rgba(18, 140, 184, 0.06);
+}
+
+.cupon-form__title,
+.cupon-list__title {
+  margin: 0 0 1rem;
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: #6e8085;
+}
+
+.cupon-form__fields {
+  display: grid;
+  gap: 1rem;
+}
+
+@media (min-width: 480px) {
+  .cupon-form__fields {
+    grid-template-columns: 1fr 8rem;
+    align-items: end;
+  }
+}
+
+.cupon-form__field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.cupon-form__label {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #6e8085;
+}
+
+.cupon-form__input {
+  width: 100%;
+  padding: 0.65rem 0.85rem;
+  font: inherit;
+  font-size: 0.95rem;
+  color: #6e8085;
+  background: #fff;
+  border: 1px solid #cbd4d6;
+  border-radius: 0.5rem;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.cupon-form__input:focus {
+  outline: none;
+  border-color: #128cb8;
+  box-shadow: 0 0 0 3px rgba(18, 140, 184, 0.15);
+}
+
+.cupon-form__input:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+}
+
+.cupon-form__error {
+  margin: 0.85rem 0 0;
+  font-size: 0.875rem;
+  color: #c0392b;
+}
+
+.cupon-form__submit {
+  margin-top: 1rem;
+  padding: 0.7rem 1.25rem;
+  font: inherit;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #fff;
+  background: #128cb8;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: background 0.15s ease;
+}
+
+.cupon-form__submit:hover:not(:disabled) {
+  background: #0d6f92;
+}
+
+.cupon-form__submit:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+}
+
+.cupon-form__submit:focus-visible {
+  outline: 2px solid #128cb8;
+  outline-offset: 3px;
+}
+
+.cupon-list {
+  padding: 1.25rem;
+  background: #fafcfc;
+  border: 1px solid #cbd4d6;
+  border-radius: 0.75rem;
+  box-shadow: 0 2px 8px rgba(18, 140, 184, 0.06);
+}
+
+.cupon-list__status {
+  margin: 0;
+  padding: 1.5rem 1.25rem;
+  text-align: center;
+  line-height: 1.55;
+  color: #6e8085;
+  background: rgba(203, 212, 214, 0.25);
+  border: 1px solid #cbd4d6;
+  border-radius: 0.75rem;
+}
+
+.cupon-list__status--error {
+  color: #c0392b;
+  background: rgba(192, 57, 43, 0.06);
+  border-color: rgba(192, 57, 43, 0.25);
+}
+
+.cupon-list__items {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.cupon-item {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem 1rem;
+  padding: 0.9rem 1rem;
+  background: #fff;
+  border: 1px solid #cbd4d6;
+  border-radius: 0.5rem;
+}
+
+.cupon-item__info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  min-width: 0;
+}
+
+.cupon-item__codigo {
+  font-weight: 700;
+  font-size: 1rem;
+  letter-spacing: 0.02em;
+  color: #128cb8;
+  word-break: break-word;
+}
+
+.cupon-item__descuento {
+  font-size: 0.875rem;
+  color: #6e8085;
+}
+
+.cupon-item__delete {
+  flex-shrink: 0;
+  padding: 0.45rem 0.9rem;
+  font: inherit;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #c0392b;
+  background: transparent;
+  border: 1px solid rgba(192, 57, 43, 0.35);
+  border-radius: 0.4rem;
+  cursor: pointer;
+  transition: background 0.15s ease, border-color 0.15s ease;
+}
+
+.cupon-item__delete:hover:not(:disabled) {
+  background: rgba(192, 57, 43, 0.08);
+  border-color: #c0392b;
+}
+
+.cupon-item__delete:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+}
+
+.cupon-item__delete:focus-visible {
+  outline: 2px solid #c0392b;
+  outline-offset: 2px;
+}
