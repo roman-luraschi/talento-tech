@@ -1,0 +1,56 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    function isSignedIn() {
+      return request.auth != null;
+    }
+
+    function isOwner(userId) {
+      return isSignedIn() && request.auth.uid == userId;
+    }
+
+    function userRole() {
+      return get(/databases/$(database)/documents/users/$(request.auth.uid)).data.get('role', 'cliente');
+    }
+
+    function isAdmin() {
+      return isSignedIn() && userRole() == 'admin';
+    }
+
+    function roleUnchanged() {
+      return request.resource.data.get('role', 'cliente')
+        == resource.data.get('role', 'cliente');
+    }
+
+    match /products/{productId} {
+      allow read: if resource.data.keys().hasAll(['name', 'price', 'categoryId']);
+      allow create, update, delete: if isAdmin();
+    }
+
+    match /equipo/{integranteId} {
+      allow read: if resource.data.keys().hasAll(['nombre', 'rol', 'fotoURL']);
+      allow create, update, delete: if isAdmin();
+    }
+
+    match /cupones/{cuponId} {
+      allow read: if resource.data.keys().hasAll(['codigo', 'descuento']);
+      allow create, update, delete: if isAdmin();
+    }
+
+    match /users/{userId} {
+      allow read: if isOwner(userId);
+
+      allow create: if isOwner(userId)
+        && request.resource.data.email == request.auth.token.email
+        && !('role' in request.resource.data)
+        && request.resource.data.keys().hasAll(['email', 'cart', 'favoriteIds']);
+
+      allow update: if isOwner(userId)
+        && roleUnchanged()
+        && !request.resource.data.diff(resource.data).affectedKeys().hasAny(['role'])
+        && request.resource.data.email == request.auth.token.email;
+
+      allow delete: if false;
+    }
+  }
+}
