@@ -6,15 +6,15 @@ function PromoBanner() {
       <div className="promo-banner__inner">
         <div className="promo-banner__content">
           <h2 id="promo-heading" className="promo-banner__title">
-            Ofertas de la semana
+            Envío gratis desde $100.000
           </h2>
           <p className="promo-banner__text">
-            Envío gratis en compras superiores a $100. Cambios y devoluciones
-            dentro de los primeros 30 días.
+            Y si no te cierra el producto, tenés 30 días para cambiarlo o
+            devolverlo.
           </p>
         </div>
         <a href="#destacados" className="promo-banner__cta">
-          Ver ofertas
+          Ver más
         </a>
       </div>
     </aside>

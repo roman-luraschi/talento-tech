@@ -1,26 +1,31 @@
-import type { Persona } from '../types/nosotros'
+import type { Integrante } from '../types/equipo'
 
 interface TarjetaContactoProps {
-  persona: Persona
+  integrante: Integrante
 }
 
-function TarjetaContacto({ persona }: TarjetaContactoProps) {
+function TarjetaContacto({ integrante }: TarjetaContactoProps) {
   return (
     <div className="col">
-      <article className="card h-100 shadow-sm border-0">
+      <article className="footer__equipo-card card h-100 border-0">
         <img
-          src={persona.foto}
+          src={integrante.fotoURL}
           className="card-img-top footer__directorio-avatar"
-          alt={`Foto de ${persona.nombre}`}
+          alt={`Foto de ${integrante.nombre}`}
           loading="lazy"
           width={200}
           height={200}
         />
         <div className="card-body d-flex flex-column">
-          <h3 className="card-title h5 mb-1">{persona.nombre}</h3>
-          <p className="text-secondary small mb-2">{persona.puesto}</p>
-          <a className="mt-auto small" href={`mailto:${persona.email}`}>
-            {persona.email}
+          <h3 className="card-title h6 mb-1">{integrante.nombre}</h3>
+          <p className="footer__equipo-rol small mb-3">{integrante.rol}</p>
+          <a
+            className="footer__equipo-linkedin mt-auto"
+            href={integrante.linkedinURL}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Ver LinkedIn
           </a>
         </div>
       </article>

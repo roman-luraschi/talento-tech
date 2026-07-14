@@ -22,12 +22,50 @@
   aspect-ratio: 1 / 1;
 }
 
-.footer__directorio .card {
+.footer__equipo-card {
   border-radius: 0.5rem;
+  overflow: hidden;
+  background: rgba(250, 252, 252, 0.96);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+  transition: transform 0.18s ease, box-shadow 0.18s ease;
+}
+
+.footer__equipo-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.16);
 }
 
 .footer__directorio .card-title {
   color: #2d3436;
+  font-weight: 700;
+}
+
+.footer__equipo-rol {
+  margin: 0;
+  color: #5a696d;
+  line-height: 1.4;
+}
+
+.footer__equipo-linkedin {
+  display: inline-flex;
+  align-items: center;
+  width: fit-content;
+  font-size: 0.8125rem;
+  font-weight: 700;
+  color: #128cb8;
+  text-decoration: none;
+  transition: color 0.18s ease;
+}
+
+.footer__equipo-linkedin:hover {
+  color: #0d6a8c;
+  text-decoration: underline;
+}
+
+.footer__equipo-linkedin:focus-visible {
+  outline: 2px solid #128cb8;
+  outline-offset: 3px;
+  border-radius: 4px;
 }
 
 .footer__main {
